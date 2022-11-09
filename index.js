@@ -17,14 +17,19 @@ import * as firebaseui from "firebaseui";
 
 // Add Firebase project configuration object here
 var firebaseConfig = {
-  apiKey: "AIzaSyAzcwgZuLA7dO9g4sQhXQVTUgCo0M8m2qM",
-  authDomain: "grocerylist-91956.firebaseapp.com",
-  databaseURL: "https://grocerylist-91956.firebaseio.com",
-  projectId: "grocerylist-91956",
-  storageBucket: "grocerylist-91956.appspot.com",
-  messagingSenderId: "813812426276",
-  appId: "1:813812426276:web:93e5897af12892ff78dab1",
-  measurementId: "G-VZ83BTR72T"
+  apiKey: "AIzaSyBC8RZY7dcUF2OTpe8TF30QOUBjAVRaWKc",
+
+  authDomain: "grocerylist-8b594.firebaseapp.com",
+
+  projectId: "grocerylist-8b594",
+
+  storageBucket: "grocerylist-8b594.appspot.com",
+
+  messagingSenderId: "871764817573",
+
+  appId: "1:871764817573:web:12fb4afd10b423a69a7f4c",
+
+  measurementId: "G-YS8JY5WKP6"
 };
 
 firebase.initializeApp(firebaseConfig);
@@ -34,6 +39,7 @@ $("#save").click(function() {
 // document.querySelectorAll('li') ==> nodelist
 // for loop to go through each nodelist
 // and then get the text content
+$(this).text("saved");
 
   $('li').each(function(){
     var value = $(this).text();
@@ -43,7 +49,14 @@ $("#save").click(function() {
     .firestore()
     .collection("mylist")
     .add({
-      item: value//?
+      item: value,//?
+    });
+
+    firebase
+    .firestore()
+    .collection("testlist")
+    .add({
+      item: value,//?
     });
 
 
