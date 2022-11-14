@@ -52,14 +52,6 @@ $(this).text("saved");
       item: value,//?
     });
 
-    firebase
-    .firestore()
-    .collection("testlist")
-    .add({
-      item: value,//?
-    });
-
-
   });
 
 });
